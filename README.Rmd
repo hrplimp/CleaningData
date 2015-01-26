@@ -1,0 +1,127 @@
+---
+title: "Untitled"
+author: "hrplimp"
+date: "Sunday, January 25, 2015"
+output: html_document
+---
+
+This code completes steps 1-5 of the Coursera Cleanging Data course project.  It is a little out of order since i wanted to load all the data before combining it. 
+
+the first section creates a dataframe called "features" from the features.txt file. We added two row to this, suject, and activity_type, to create labels for when we add the columns later. Features is then transformed into colLabels that will be used to label the columns.
+
+the code the imports the following tables 
+subject_train.txt
+x_train.txt
+y_train.txt
+and adds sbuject, and y as additional columns to x_trian.
+
+The above imports and binds are then aslo done for the test data
+subject_test.txt
+x_test.txt
+y_test.txt
+
+the code the combined dfTest and dfTrain into dfTotal and labels the columns using colLables.
+
+The code is then reduced down to only the mean and std columns, stored in dfMeanStd.
+
+the activity_labels.txt fils is loaded and merged with dfMeanStd to via actity type so the labels are names.
+
+the data is then grouped by Subject and Activity_Name, and the mean of each remaining column is provided.
+
+the last step is an exported text file of the tidy dataframe.
+
+Data labels are as such:
+(mean denotes the mean, std denotes the standard deviation)
+ [1] "Subject"                              
+ "Activity_Name"                        
+ "Activity_Type"                       
+ [4] "tBodyAcc.mean...X"
+ "tBodyAcc.mean...Y"                    
+ "tBodyAcc.mean...Z"    
+ [7] "tGravityAcc.mean...X"                 
+ "tGravityAcc.mean...Y"                 
+ "tGravityAcc.mean...Z"                
+[10] "tBodyAccJerk.mean...X"                
+"tBodyAccJerk.mean...Y"                
+"tBodyAccJerk.mean...Z"               
+[13] "tBodyGyro.mean...X"                   
+"tBodyGyro.mean...Y"                   
+"tBodyGyro.mean...Z"                  
+[16] "tBodyGyroJerk.mean...X"               
+"tBodyGyroJerk.mean...Y"               
+"tBodyGyroJerk.mean...Z"              
+[19] "tBodyAccMag.mean.."                   
+"tGravityAccMag.mean.."                
+"tBodyAccJerkMag.mean.."              
+[22] "tBodyGyroMag.mean.."             
+"tBodyGyroJerkMag.mean.."              
+"fBodyAcc.mean...X"                   
+[25] "fBodyAcc.mean...Y"                    
+"fBodyAcc.mean...Z"                    
+"fBodyAcc.meanFreq...X"               
+[28] "fBodyAcc.meanFreq...Y"                
+"fBodyAcc.meanFreq...Z"                
+"fBodyAccJerk.mean...X"               
+[31] "fBodyAccJerk.mean...Y"                
+"fBodyAccJerk.mean...Z"                
+"fBodyAccJerk.meanFreq...X"           
+[34] "fBodyAccJerk.meanFreq...Y"            
+"fBodyAccJerk.meanFreq...Z"            
+"fBodyGyro.mean...X"                  
+[37] "fBodyGyro.mean...Y"                   
+"fBodyGyro.mean...Z"                   
+"fBodyGyro.meanFreq...X"              
+[40] "fBodyGyro.meanFreq...Y"          
+"fBodyGyro.meanFreq...Z"               
+"fBodyAccMag.mean.."                  
+[43] "fBodyAccMag.meanFreq.."               
+"fBodyBodyAccJerkMag.mean.."           
+"fBodyBodyAccJerkMag.meanFreq.."      
+[46] "fBodyBodyGyroMag.mean.."             
+"fBodyBodyGyroMag.meanFreq.."          
+"fBodyBodyGyroJerkMag.mean.."         
+[49] "fBodyBodyGyroJerkMag.meanFreq.."      
+"angle.tBodyAccMean.gravity."          
+"angle.tBodyAccJerkMean..gravityMean."
+[52] "angle.tBodyGyroMean.gravityMean."     
+"angle.tBodyGyroJerkMean.gravityMean." 
+"angle.X.gravityMean."                
+[55] "angle.Y.gravityMean."                 
+"angle.Z.gravityMean."                 
+"tBodyAcc.std...X"                    
+[58] "tBodyAcc.std...Y"                     
+"tBodyAcc.std...Z"                     
+"tGravityAcc.std...X"                 
+[61] "tGravityAcc.std...Y"                  
+"tGravityAcc.std...Z"                  
+"tBodyAccJerk.std...X"                
+[64] "tBodyAccJerk.std...Y"                 
+"tBodyAccJerk.std...Z"                 
+"tBodyGyro.std...X"                   
+[67] "tBodyGyro.std...Y"                    
+"tBodyGyro.std...Z"                    
+"tBodyGyroJerk.std...X"               
+[70] "tBodyGyroJerk.std...Y"                
+"tBodyGyroJerk.std...Z"                
+"tBodyAccMag.std.."                   
+[73] "tGravityAccMag.std.."                 
+"tBodyAccJerkMag.std.."                
+"tBodyGyroMag.std.."                  
+[76] "tBodyGyroJerkMag.std.."               
+"fBodyAcc.std...X"                     
+"fBodyAcc.std...Y"                    
+[79] "fBodyAcc.std...Z"                     
+"fBodyAccJerk.std...X"                 
+"fBodyAccJerk.std...Y"                
+[82] "fBodyAccJerk.std...Z"                 
+"fBodyGyro.std...X"                    
+"fBodyGyro.std...Y"                   
+[85] "fBodyGyro.std...Z"                    
+"fBodyAccMag.std.."                    
+"fBodyBodyAccJerkMag.std.."           
+[88] "fBodyBodyGyroMag.std.."               
+"fBodyBodyGyroJerkMag.std.."  
+
+
+
+
